@@ -1,0 +1,1753 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Flavor Haven | Restaurant & Cafe</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+        /* ---------- GENERAL STYLES ---------- */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --green: #14291f;
+            --dark-green: #0b1a13;
+            --gold: #b88746;
+            --light-gold: #e8c58c;
+            --cream: #f8f5ee;
+            --white: #ffffff;
+            --text: #353932;
+            --muted: #74766e;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: "Playfair Display", serif;
+            color: var(--green);
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        section {
+            padding: 75px 7%;
+            scroll-margin-top: 85px;
+        }
+
+        .container {
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .section-label {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4vw, 43px);
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            max-width: 650px;
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gold);
+            color: white;
+            padding: 13px 25px;
+            border: 2px solid var(--gold);
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: var(--light-gold);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: var(--light-gold);
+            color: var(--green);
+        }
+
+        /* ---------- HEADER AND RESPONSIVE NAVIGATION ---------- */
+
+        header {
+            background: rgba(248, 245, 238, 0.98);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .navbar {
+            max-width: 1400px;
+            margin: auto;
+            min-height: 78px;
+            padding: 12px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            font-size: 35px;
+        }
+
+        .logo h2 {
+            font-size: 23px;
+        }
+
+        .logo p {
+            font-size: 10px;
+            color: var(--gold);
+            margin: 0;
+            letter-spacing: 1.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--green);
+        }
+
+        /* ---------- HERO SECTION ---------- */
+
+        .hero {
+            min-height: 590px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg,
+                rgba(8, 19, 12, 0.88) 0%,
+                rgba(8, 19, 12, 0.62) 48%,
+                rgba(8, 19, 12, 0.15) 100%),
+                url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=85")
+                center/cover no-repeat;
+            padding: 90px 7%;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            color: white;
+        }
+
+        .hero .section-label {
+            color: var(--light-gold);
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: clamp(42px, 6vw, 68px);
+            margin-bottom: 22px;
+        }
+
+        .hero p {
+            color: #f1eee7;
+            max-width: 540px;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .hero-note {
+            margin-top: 28px;
+            font-size: 13px;
+            color: var(--light-gold);
+            letter-spacing: 1px;
+        }
+
+        /* ---------- INTRODUCTION ---------- */
+
+        .intro {
+            background: var(--white);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .intro-image {
+            height: 420px;
+            border-radius: 8px;
+            box-shadow: 18px 18px 0 var(--light-gold);
+        }
+
+        .intro-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .intro-feature {
+            padding: 16px;
+            border-left: 3px solid var(--gold);
+            background: var(--cream);
+        }
+
+        .intro-feature h3 {
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .intro-feature p {
+            font-size: 13px;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        /* ---------- MENU SECTION ---------- */
+
+        .menu-section {
+            background: var(--cream);
+        }
+
+        .center-heading {
+            text-align: center;
+        }
+
+        .center-heading .section-description {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .menu-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .category {
+            padding: 9px 20px;
+            border: 1px solid #ded6c8;
+            border-radius: 30px;
+            font-size: 13px;
+            color: var(--green);
+            background: white;
+        }
+
+        .category.active,
+        .category:hover {
+            background: var(--green);
+            color: white;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-card img {
+            height: 205px;
+        }
+
+        .menu-card-content {
+            padding: 19px;
+        }
+
+        .menu-card h3 {
+            font-size: 19px;
+            margin-bottom: 7px;
+        }
+
+        .menu-card p {
+            font-size: 13px;
+            color: var(--muted);
+            min-height: 62px;
+        }
+
+        .menu-card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price {
+            font-size: 17px;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .rating {
+            color: #d49b32;
+            font-size: 13px;
+        }
+
+        .menu-note {
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 22px;
+        }
+
+        /* ---------- CHEF SECTION ---------- */
+
+        .chefs-section {
+            background: white;
+        }
+
+        .chef-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .chef-card {
+            text-align: center;
+            background: var(--cream);
+            border-radius: 8px;
+            overflow: hidden;
+            padding-bottom: 25px;
+        }
+
+        .chef-card img {
+            height: 330px;
+            object-position: center top;
+        }
+
+        .chef-card h3 {
+            margin-top: 20px;
+            font-size: 22px;
+        }
+
+        .chef-role {
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 700;
+            margin: 5px 0 10px;
+        }
+
+        .chef-card p {
+            padding: 0 22px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* ---------- AMBIENCE SECTION ---------- */
+
+        .ambience-section {
+            background: var(--green);
+            color: white;
+        }
+
+        .ambience-section h2 {
+            color: white;
+        }
+
+        .ambience-section .section-description {
+            color: #d7ded8;
+        }
+
+        .ambience-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr 1fr;
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .ambience-grid img {
+            height: 280px;
+            border-radius: 7px;
+        }
+
+        .ambience-caption {
+            font-size: 13px;
+            color: var(--light-gold);
+            margin-top: 10px;
+        }
+
+        /* ---------- TESTIMONIALS ---------- */
+
+        .testimonials-section {
+            background: #f0eadd;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 28px;
+            border-radius: 8px;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .quote-mark {
+            font-family: "Playfair Display", serif;
+            color: var(--gold);
+            font-size: 45px;
+            line-height: 1;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 14px;
+            color: var(--muted);
+            margin: 12px 0 20px;
+        }
+
+        .customer {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .customer img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+        }
+
+        .customer h4 {
+            font-family: "DM Sans", sans-serif;
+            font-size: 14px;
+        }
+
+        .customer p {
+            font-size: 12px;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        /* ---------- HOURS AND LOCATION ---------- */
+
+        .info-section {
+            background: white;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .info-card {
+            padding: 30px;
+            background: var(--cream);
+            border-radius: 8px;
+        }
+
+        .info-card h3 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2dccf;
+            font-size: 14px;
+        }
+
+        .hours-row span:last-child {
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .hours-row.closed {
+            color: #b04438;
+        }
+
+        .location-details {
+            margin-bottom: 20px;
+        }
+
+        .location-details p {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 280px;
+            border: 0;
+            border-radius: 7px;
+        }
+
+        /* ---------- RESERVATION FORM ---------- */
+
+        .reservation-section {
+            background:
+                linear-gradient(rgba(11, 26, 19, 0.94),
+                rgba(11, 26, 19, 0.94)),
+                url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+            color: white;
+        }
+
+        .reservation-section h2 {
+            color: white;
+        }
+
+        .reservation-section .section-description {
+            color: #d4ded5;
+        }
+
+        .reservation-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .reservation-form {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            color: #f3e6d0;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #647166;
+            background: #f8f5ee;
+            border-radius: 4px;
+            font: inherit;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .reservation-form .btn {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .form-note {
+            font-size: 12px;
+            color: #d4ded5;
+            margin-top: 15px;
+        }
+
+        /* ---------- CONTACT AND FOOTER ---------- */
+
+        .contact-strip {
+            background: var(--light-gold);
+            padding: 30px 7%;
+        }
+
+        .contact-strip-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-strip h3 {
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        .contact-strip p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        footer {
+            background: #09140e;
+            color: #e3e5df;
+            padding: 55px 7% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 35px;
+            padding-bottom: 35px;
+        }
+
+        footer h3,
+        footer h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        footer h3 {
+            font-size: 24px;
+        }
+
+        footer h4 {
+            font-family: "DM Sans", sans-serif;
+            font-size: 15px;
+        }
+
+        footer p,
+        footer li,
+        footer a {
+            color: #b9c1ba;
+            font-size: 13px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 10px;
+        }
+
+        footer a:hover {
+            color: var(--light-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 18px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            border: 1px solid #5b665d;
+            border-radius: 50%;
+        }
+
+        .copyright {
+            border-top: 1px solid #29372d;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #9ca69d;
+        }
+
+        /* ---------- RESPONSIVE DESIGN ---------- */
+
+        @media (max-width: 1050px) {
+            .navbar {
+                padding-left: 4%;
+                padding-right: 4%;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 760px) {
+            section {
+                padding: 55px 6%;
+            }
+
+            .navbar {
+                min-height: 70px;
+                flex-wrap: wrap;
+            }
+
+            .logo h2 {
+                font-size: 20px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            .nav-links li {
+                border-top: 1px solid #e6dfd2;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px 5px;
+                font-size: 14px;
+            }
+
+            /* Checkbox-based menu: no JavaScript required */
+            .menu-toggle:checked ~ .nav-links {
+                display: flex;
+            }
+
+            .hero {
+                min-height: 520px;
+                padding: 70px 6%;
+                background-position: 60% center;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .intro-grid,
+            .reservation-layout {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .intro-image {
+                height: 320px;
+            }
+
+            .chef-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chef-card img {
+                height: 350px;
+            }
+
+            .ambience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ambience-grid img {
+                height: 260px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-strip-inner {
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-icon {
+                font-size: 28px;
+            }
+
+            .logo h2 {
+                font-size: 17px;
+            }
+
+            .logo p {
+                font-size: 9px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-grid,
+            .intro-features,
+            .form-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-card img {
+                height: 220px;
+            }
+
+            .form-group.full-width {
+                grid-column: auto;
+            }
+
+            .info-card,
+            .reservation-form {
+                padding: 20px;
+            }
+
+            .hours-row {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="logo">
+                <span class="logo-icon">♧</span>
+                <div>
+                    <h2>The Flavor Haven</h2>
+                    <p>GOOD FOOD · GREAT VIBES</p>
+                </div>
+            </a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon"
+                   aria-label="Open navigation menu">☰</label>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Our Menu</a></li>
+                <li><a href="#chefs">Our Chefs</a></li>
+                <li><a href="#ambience">Ambience</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#information">Hours & Location</a></li>
+                <li><a href="#reservation">Reservation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HOME / HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="section-label">Fresh Ingredients · Authentic Flavors</p>
+                <h1>A Culinary Journey Awaits You</h1>
+                <p>
+                    Welcome to The Flavor Haven, where delicious food,
+                    warm hospitality, and beautiful surroundings come together.
+                    Every meal is prepared with care and served with love.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn">Explore Our Menu →</a>
+                    <a href="#reservation" class="btn btn-outline">
+                        Book a Table
+                    </a>
+                </div>
+
+                <p class="hero-note">
+                    ✦ Freshly Prepared · Thoughtfully Served · Made with Love
+                </p>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="intro" id="about">
+            <div class="container intro-grid">
+                <div>
+                    <p class="section-label">Our Story</p>
+                    <h2 class="section-title">
+                        More Than a Meal, It's an Experience
+                    </h2>
+                    <p>
+                        The Flavor Haven is a welcoming restaurant and cafe
+                        created for people who appreciate good food and
+                        memorable moments. We bring together classic recipes,
+                        modern cooking techniques, and carefully selected
+                        ingredients to create dishes everyone can enjoy.
+                    </p>
+                    <p>
+                        Whether you are meeting friends over coffee, enjoying
+                        a family dinner, celebrating a special occasion, or
+                        planning a romantic evening, our team is here to make
+                        your visit comfortable and enjoyable.
+                    </p>
+
+                    <div class="intro-features">
+                        <div class="intro-feature">
+                            <h3>Fresh Ingredients</h3>
+                            <p>Quality ingredients chosen with care.</p>
+                        </div>
+                        <div class="intro-feature">
+                            <h3>Expert Chefs</h3>
+                            <p>Passion and creativity in every dish.</p>
+                        </div>
+                        <div class="intro-feature">
+                            <h3>Warm Hospitality</h3>
+                            <p>Friendly service for every guest.</p>
+                        </div>
+                        <div class="intro-feature">
+                            <h3>Cozy Ambience</h3>
+                            <p>A relaxing place to spend time together.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <img class="intro-image"
+                         src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=85"
+                         alt="Warm and welcoming restaurant interior">
+                </div>
+            </div>
+        </section>
+
+        <!-- MENU SECTION -->
+        <section class="menu-section" id="menu">
+            <div class="container">
+                <div class="center-heading">
+                    <p class="section-label">Discover Our Menu</p>
+                    <h2 class="section-title">
+                        Delicious Food, Thoughtfully Served
+                    </h2>
+                    <p class="section-description">
+                        From comforting starters to satisfying main courses
+                        and delightful desserts, discover food prepared with
+                        fresh ingredients and attention to detail.
+                    </p>
+                </div>
+
+                <div class="menu-categories">
+                    <a href="#starters" class="category">Starters</a>
+                    <a href="#main-course" class="category active">Main Course</a>
+                    <a href="#pizzas" class="category">Pizzas</a>
+                    <a href="#desserts" class="category">Desserts</a>
+                    <a href="#beverages" class="category">Beverages</a>
+                </div>
+
+                <h3 id="starters" style="margin-bottom: 20px;">
+                    Our Starters
+                </h3>
+
+                <div class="menu-grid">
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80"
+                             alt="Fresh vegetable salad">
+                        <div class="menu-card-content">
+                            <h3>Garden Fresh Salad</h3>
+                            <p>A refreshing mix of vegetables, greens,
+                               and our house dressing.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹199</span>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=700&q=80"
+                             alt="Grilled food appetizer">
+                        <div class="menu-card-content">
+                            <h3>Herb Grilled Bites</h3>
+                            <p>Flavorful grilled bites with herbs
+                               and a special dipping sauce.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹249</span>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=700&q=80"
+                             alt="Bruschetta appetizer">
+                        <div class="menu-card-content">
+                            <h3>Tomato Bruschetta</h3>
+                            <p>Toasted bread topped with tomatoes,
+                               basil, and olive oil.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹179</span>
+                                <span class="rating">★★★★☆</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"
+                             alt="Crispy savory snack">
+                        <div class="menu-card-content">
+                            <h3>Crispy House Special</h3>
+                            <p>A crunchy, savory starter served
+                               with a flavorful dip.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹189</span>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <h3 id="main-course" style="margin: 45px 0 20px;">
+                    Main Course Favorites
+                </h3>
+
+                <div class="menu-grid">
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=80"
+                             alt="Creamy pasta with herbs">
+                        <div class="menu-card-content">
+                            <h3>Creamy Alfredo Pasta</h3>
+                            <p>Creamy pasta with parmesan, herbs,
+                               and a rich homemade sauce.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹299</span>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80"
+                             alt="Classic cheeseburger">
+                        <div class="menu-card-content">
+                            <h3>Classic Cheeseburger</h3>
+                            <p>A juicy burger with cheese, lettuce,
+                               tomato, and our special sauce.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹279</span>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card" id="pizzas">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=80"
+                             alt="Freshly baked pizza">
+                        <div class="menu-card-content">
+                            <h3>Margherita Pizza</h3>
+                            <p>Classic pizza with mozzarella,
+                               tomato sauce, and fresh basil.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹329</span>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80"
+                             alt="Pizza with assorted toppings">
+                        <div class="menu-card-content">
+                            <h3>Garden Veggie Pizza</h3>
+                            <p>A colorful combination of vegetables,
+                               cheese, and Italian herbs.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹359</span>
+                                <span class="rating">★★★★☆</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <h3 id="desserts" style="margin: 45px 0 20px;">
+                    Desserts and Sweet Treats
+                </h3>
+
+                <div class="menu-grid">
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=700&q=80"
+                             alt="Chocolate dessert">
+                        <div class="menu-card-content">
+                            <h3>Chocolate Lava Cake</h3>
+                            <p>A rich chocolate cake with a warm,
+                               soft center.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹199</span>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=700&q=80"
+                             alt="Ice cream dessert">
+                        <div class="menu-card-content">
+                            <h3>Classic Ice Cream</h3>
+                            <p>A cool and creamy treat available
+                               in delightful flavors.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹149</span>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80"
+                             alt="Chocolate celebration cake">
+                        <div class="menu-card-content">
+                            <h3>Chocolate Celebration Cake</h3>
+                            <p>Soft chocolate layers with smooth
+                               and creamy frosting.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹229</span>
+                                <span class="rating">★★★★☆</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=80"
+                             alt="Fresh fruit and cream dessert">
+                        <div class="menu-card-content">
+                            <h3>Fruit and Cream Bowl</h3>
+                            <p>Seasonal fruits served with
+                               smooth, fresh cream.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹179</span>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <h3 id="beverages" style="margin: 45px 0 20px;">
+                    Coffee and Beverages
+                </h3>
+
+                <div class="menu-grid">
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=80"
+                             alt="Cup of cappuccino">
+                        <div class="menu-card-content">
+                            <h3>Classic Cappuccino</h3>
+                            <p>Freshly brewed espresso with
+                               steamed milk and foam.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹149</span>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=700&q=80"
+                             alt="Iced coffee in a glass">
+                        <div class="menu-card-content">
+                            <h3>Iced Coffee</h3>
+                            <p>Chilled coffee served over ice
+                               for a refreshing break.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹159</span>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=700&q=80"
+                             alt="Refreshing fruit drink">
+                        <div class="menu-card-content">
+                            <h3>Fresh Fruit Cooler</h3>
+                            <p>A refreshing fruit drink made
+                               for a relaxing afternoon.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹129</span>
+                                <span class="rating">★★★★☆</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=700&q=80"
+                             alt="Freshly brewed tea">
+                        <div class="menu-card-content">
+                            <h3>Freshly Brewed Tea</h3>
+                            <p>A comforting cup of aromatic tea
+                               served hot.</p>
+                            <div class="menu-card-bottom">
+                                <span class="price">₹99</span>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="menu-note">
+                    Note: Menu items and prices are sample details for this project.
+                    Please inform the restaurant about dietary requirements.
+                </p>
+            </div>
+        </section>
+
+        <!-- CHEF PROFILES -->
+        <section class="chefs-section" id="chefs">
+            <div class="container">
+                <div class="center-heading">
+                    <p class="section-label">Meet Our Team</p>
+                    <h2 class="section-title">
+                        Passionate Chefs, Extraordinary Flavors
+                    </h2>
+                    <p class="section-description">
+                        Behind every memorable meal is a talented team
+                        that combines experience, creativity, and a love
+                        of cooking.
+                    </p>
+                </div>
+
+                <div class="chef-grid">
+                    <article class="chef-card">
+                        <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=800&q=80"
+                             alt="Head chef working in a professional kitchen">
+                        <h3>Chef Maria Lopez</h3>
+                        <p class="chef-role">HEAD CHEF</p>
+                        <p>
+                            Maria brings creativity and experience to
+                            every dish, specializing in Mediterranean
+                            flavors and fresh ingredients.
+                        </p>
+                    </article>
+
+                    <article class="chef-card">
+                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80"
+                             alt="Chef preparing food in a restaurant kitchen">
+                        <h3>Chef Daniel Kim</h3>
+                        <p class="chef-role">SOUS CHEF</p>
+                        <p>
+                            Daniel loves experimenting with flavors and
+                            creating balanced dishes inspired by cuisines
+                            from around the world.
+                        </p>
+                    </article>
+
+                    <article class="chef-card">
+                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80"
+                             alt="Pastry chef preparing a dessert">
+                        <h3>Chef Priya Sharma</h3>
+                        <p class="chef-role">PASTRY CHEF</p>
+                        <p>
+                            Priya creates delightful cakes, pastries,
+                            and desserts that bring a sweet finish
+                            to every dining experience.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESTAURANT AMBIENCE -->
+        <section class="ambience-section" id="ambience">
+            <div class="container">
+                <p class="section-label">Our Ambience</p>
+                <h2 class="section-title">A Place to Relax and Enjoy</h2>
+                <p class="section-description">
+                    Enjoy a warm atmosphere with comfortable seating,
+                    gentle lighting, elegant interiors, and inviting
+                    spaces for everyday dining and special celebrations.
+                </p>
+
+                <div class="ambience-grid">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
+                             alt="Restaurant dining room with warm lighting">
+                        <p class="ambience-caption">Elegant Dining Area</p>
+                    </div>
+
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80"
+                             alt="Cozy cafe with tables and comfortable seating">
+                        <p class="ambience-caption">Cozy Cafe Corner</p>
+                    </div>
+
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=80"
+                             alt="Restaurant interior prepared for guests">
+                        <p class="ambience-caption">Special Occasion Dining</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUSTOMER TESTIMONIALS -->
+        <section class="testimonials-section" id="testimonials">
+            <div class="container">
+                <div class="center-heading">
+                    <p class="section-label">Customer Testimonials</p>
+                    <h2 class="section-title">What Our Guests Say</h2>
+                    <p class="section-description">
+                        We believe that good food and thoughtful service
+                        create experiences worth remembering.
+                    </p>
+                </div>
+
+                <div class="testimonial-grid">
+                    <article class="testimonial-card">
+                        <div class="quote-mark">“</div>
+                        <blockquote>
+                            The food was delicious, the ambience was
+                            beautiful, and the staff made us feel welcome.
+                            It was a wonderful dining experience.
+                        </blockquote>
+                        <div class="customer">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+                                 alt="Customer portrait">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>Family Dining</p>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <div class="quote-mark">“</div>
+                        <blockquote>
+                            A lovely place to meet friends. The coffee
+                            was excellent, the menu had great choices,
+                            and the atmosphere was relaxing.
+                        </blockquote>
+                        <div class="customer">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
+                                 alt="Customer portrait">
+                            <div>
+                                <h4>Michael Brown</h4>
+                                <p>Cafe Visit</p>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <div class="quote-mark">“</div>
+                        <blockquote>
+                            We celebrated a special occasion here.
+                            The food presentation, comfortable seating,
+                            and friendly service made it memorable.
+                        </blockquote>
+                        <div class="customer">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
+                                 alt="Customer portrait">
+                            <div>
+                                <h4>Emily Davis</h4>
+                                <p>Special Occasion</p>
+                                <span class="rating">★★★★★</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="menu-note">
+                    The testimonials above are sample content for demonstration.
+                </p>
+            </div>
+        </section>
+
+        <!-- OPENING HOURS AND LOCATION -->
+        <section class="info-section" id="information">
+            <div class="container info-grid">
+
+                <div class="info-card">
+                    <p class="section-label">Visit Us</p>
+                    <h3>Opening Hours</h3>
+
+                    <div class="hours-row">
+                        <span>Monday</span>
+                        <span>11:00 AM – 10:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span>Tuesday</span>
+                        <span>11:00 AM – 10:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span>Wednesday</span>
+                        <span>11:00 AM – 10:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span>Thursday</span>
+                        <span>11:00 AM – 10:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span>Friday</span>
+                        <span>11:00 AM – 11:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span>Saturday</span>
+                        <span>10:00 AM – 11:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span>Sunday</span>
+                        <span>10:00 AM – 10:00 PM</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <p class="section-label">Find Our Restaurant</p>
+                    <h3>Location and Contact</h3>
+
+                    <div class="location-details">
+                        <p>
+                            <strong>Address:</strong><br>
+                            123 Foodie Lane, Green Park,<br>
+                            New Delhi, India – 110016
+                        </p>
+                        <p>
+                            <strong>Phone:</strong>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </p>
+                        <p>
+                            <strong>Email:</strong>
+                            <a href="mailto:info@theflavorhaven.com">
+                                info@theflavorhaven.com
+                            </a>
+                        </p>
+                    </div>
+
+                    <iframe
+                        class="map-frame"
+                        title="Map showing Green Park, New Delhi"
+                        src="https://maps.google.com/maps?q=Green%20Park%2C%20New%20Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- TABLE RESERVATION -->
+        <section class="reservation-section" id="reservation">
+            <div class="container reservation-layout">
+                <div>
+                    <p class="section-label">Book a Table</p>
+                    <h2 class="section-title">
+                        Make Your Reservation
+                    </h2>
+                    <p class="section-description">
+                        Planning a dinner, a family gathering, or a
+                        special celebration? Fill out the form to share
+                        your preferred date, time, and party size.
+                    </p>
+
+                    <p>✦ Comfortable seating</p>
+                    <p>✦ Freshly prepared food</p>
+                    <p>✦ A welcoming dining experience</p>
+
+                    <p style="margin-top: 25px;">
+                        <strong>Need help?</strong><br>
+                        Call us at +91 98765 43210
+                    </p>
+                </div>
+
+                <form class="reservation-form"
+                      action="#reservation"
+                      method="get">
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullname">Full Name *</label>
+                            <input type="text"
+                                   id="fullname"
+                                   name="fullname"
+                                   placeholder="Enter your name"
+                                   autocomplete="name"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel"
+                                   id="phone"
+                                   name="phone"
+                                   placeholder="Enter phone number"
+                                   autocomplete="tel"
+                                   pattern="[0-9+\-\s()]{7,20}"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email"
+                                   id="email"
+                                   name="email"
+                                   placeholder="you@example.com"
+                                   autocomplete="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guests">Number of Guests *</label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Select guests</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7+">7 or More Guests</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Reservation Date *</label>
+                            <input type="date"
+                                   id="date"
+                                   name="date"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="time">Preferred Time *</label>
+                            <select id="time" name="time" required>
+                                <option value="">Select a time</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="occasion">Occasion</label>
+                            <select id="occasion" name="occasion">
+                                <option value="">Choose an occasion (optional)</option>
+                                <option value="regular">Regular Dining</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="family">Family Gathering</option>
+                                <option value="business">Business Meeting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="requests">Special Requests</label>
+                            <textarea id="requests"
+                                      name="requests"
+                                      placeholder="Dietary needs, seating preferences, or other requests"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        Submit Reservation Request →
+                    </button>
+
+                    <p class="form-note">
+                        Please note: This is a front-end demonstration.
+                        Submitting the form does not create a confirmed
+                        reservation. A backend service is needed to process
+                        bookings.
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <!-- CONTACT CALL TO ACTION -->
+        <section class="contact-strip">
+            <div class="container contact-strip-inner">
+                <div>
+                    <h3>Your Table Is Waiting!</h3>
+                    <p>
+                        Good food, great company, and memorable moments
+                        start here.
+                    </p>
+                </div>
+                <a href="#reservation" class="btn">Reserve Your Table →</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+
+                <div>
+                    <h3>The Flavor Haven</h3>
+                    <p>
+                        A welcoming restaurant and cafe where great food,
+                        warm hospitality, and memorable experiences come
+                        together.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/"
+                           aria-label="Instagram">IG</a>
+                        <a href="https://www.facebook.com/"
+                           aria-label="Facebook">f</a>
+                        <a href="https://www.youtube.com/"
+                           aria-label="YouTube">YT</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#menu">Our Menu</a></li>
+                        <li><a href="#chefs">Our Chefs</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#ambience">Restaurant Ambience</a></li>
+                        <li><a href="#testimonials">Guest Reviews</a></li>
+                        <li><a href="#information">Opening Hours</a></li>
+                        <li><a href="#reservation">Reservations</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>123 Foodie Lane, Green Park</li>
+                        <li>New Delhi, India – 110016</li>
+                        <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                        <li>
+                            <a href="mailto:info@theflavorhaven.com">
+                                Email Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                <p>
+                    © 2026 The Flavor Haven. All rights reserved.
+                    | Made with love for food lovers.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

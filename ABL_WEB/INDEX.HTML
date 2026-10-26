@@ -1,0 +1,1028 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Online Shopping Website</title>
+
+    <style>
+        /* GENERAL STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fb;
+            color: #252b42;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* TOP OFFER BAR */
+        .top-bar {
+            background-color: #172554;
+            color: white;
+            text-align: center;
+            padding: 9px;
+            font-size: 14px;
+        }
+
+        .top-bar span {
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        /* HEADER */
+        header {
+            background-color: white;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            box-shadow: 0 2px 8px #0000000d;
+        }
+
+        .logo {
+            color: #2563eb;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #f97316;
+        }
+
+        .search-box {
+            width: 35%;
+            min-width: 200px;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .header-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .header-links a {
+            color: #252b42;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .header-links a:hover {
+            color: #2563eb;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background-color: #2563eb;
+            padding: 13px 6%;
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #fde68a;
+        }
+
+        /* HERO BANNER */
+        .hero {
+            margin: 28px auto;
+            width: 90%;
+            min-height: 310px;
+            padding: 45px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            background: linear-gradient(120deg, #dbeafe, #fce7f3);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 560px;
+        }
+
+        .hero-content .tag {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            color: #172554;
+        }
+
+        .hero p {
+            color: #4b5563;
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 7px;
+            background-color: #2563eb;
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        .hero-image {
+            font-size: 130px;
+            padding: 15px;
+        }
+
+        /* BENEFITS SECTION */
+        .benefits {
+            width: 90%;
+            margin: 25px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .benefit {
+            background-color: white;
+            padding: 20px 12px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px #00000008;
+        }
+
+        .benefit .emoji {
+            font-size: 30px;
+        }
+
+        .benefit h3 {
+            font-size: 16px;
+            margin: 7px 0;
+        }
+
+        .benefit p {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        /* COMMON SECTION */
+        .section {
+            width: 90%;
+            margin: 45px auto;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .section-heading h2 {
+            font-size: 27px;
+            color: #172554;
+        }
+
+        .section-heading a {
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        /* CATEGORY CARDS */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 18px;
+        }
+
+        .category-card {
+            background-color: white;
+            padding: 24px 10px;
+            text-align: center;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            transition: 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px #00000012;
+        }
+
+        .category-card .emoji {
+            font-size: 43px;
+            margin-bottom: 8px;
+        }
+
+        .category-card h3 {
+            font-size: 15px;
+        }
+
+        .category-card p {
+            color: #6b7280;
+            font-size: 12px;
+        }
+
+        /* PRODUCT GRID */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px #00000012;
+        }
+
+        .product-image {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f1f5f9;
+            padding: 12px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .sale-label {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: #ef4444;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 5px 9px;
+            border-radius: 5px;
+        }
+
+        .product-info {
+            padding: 18px;
+        }
+
+        .product-category {
+            color: #64748b;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-info h3 {
+            font-size: 17px;
+            margin: 7px 0;
+        }
+
+        .description {
+            color: #6b7280;
+            font-size: 13px;
+            min-height: 42px;
+        }
+
+        .rating {
+            color: #f59e0b;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .rating span {
+            color: #64748b;
+        }
+
+        .price {
+            font-size: 21px;
+            font-weight: bold;
+            color: #172554;
+        }
+
+        .old-price {
+            font-size: 13px;
+            color: #9ca3af;
+            text-decoration: line-through;
+            margin-left: 6px;
+        }
+
+        .discount-text {
+            color: #16a34a;
+            font-size: 13px;
+            font-weight: bold;
+            margin: 5px 0 13px;
+        }
+
+        .product-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .product-buttons a {
+            flex: 1;
+            text-align: center;
+            padding: 10px 5px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .cart-btn {
+            background-color: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        .buy-btn {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .cart-btn:hover {
+            background-color: #bfdbfe;
+        }
+
+        .buy-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* PROMOTIONAL CARDS */
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .promo-card {
+            padding: 30px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .promo-one {
+            background: linear-gradient(120deg, #ffedd5, #fed7aa);
+        }
+
+        .promo-two {
+            background: linear-gradient(120deg, #ede9fe, #ddd6fe);
+        }
+
+        .promo-card h3 {
+            font-size: 23px;
+            margin: 10px 0;
+        }
+
+        .promo-card p {
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .promo-card .emoji {
+            font-size: 70px;
+        }
+
+        .promo-card a {
+            display: inline-block;
+            background-color: #172554;
+            color: white;
+            padding: 9px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* NEWSLETTER */
+        .newsletter {
+            background-color: #172554;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+            margin-top: 50px;
+        }
+
+        .newsletter h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .newsletter p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .newsletter input {
+            padding: 13px;
+            width: 280px;
+            max-width: 100%;
+            border: none;
+            border-radius: 6px;
+            margin: 5px;
+        }
+
+        .newsletter button {
+            padding: 13px 20px;
+            border: none;
+            background-color: #f97316;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #0f172a;
+            color: #cbd5e1;
+            padding: 40px 6% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            display: block;
+            color: #cbd5e1;
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        .footer-column a:hover {
+            color: #60a5fa;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #334155;
+            margin-top: 30px;
+            padding-top: 20px;
+            font-size: 13px;
+        }
+
+        /* TABLET RESPONSIVENESS */
+        @media (max-width: 1000px) {
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .benefits {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            nav {
+                gap: 15px;
+                padding: 15px 10px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            .hero h1 {
+                font-size: 29px;
+            }
+
+            .hero-image {
+                font-size: 85px;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .promo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .promo-card {
+                padding: 22px;
+            }
+
+            .promo-card h3 {
+                font-size: 19px;
+            }
+
+            .promo-card .emoji {
+                font-size: 45px;
+            }
+
+            .benefits {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-heading h2 {
+                font-size: 23px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP OFFER BAR -->
+    <div class="top-bar">
+        🎉 Mega Shopping Sale! <span>Up to 50% OFF</span> on selected products.
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <a href="#home" class="logo">Shop<span>Easy</span> 🛍️</a>
+
+        <input type="search"
+               class="search-box"
+               placeholder="Search for products, brands and more...">
+
+        <div class="header-links">
+            <a href="#home">👤 My Account</a>
+            <a href="#categories">♡ Wishlist</a>
+            <a href="#products">🛒 My Cart</a>
+        </div>
+    </header>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#electronics">Electronics</a>
+        <a href="#fashion">Fashion</a>
+        <a href="#offers">Special Offers</a>
+        <a href="#footer">Contact Us</a>
+    </nav>
+
+    <!-- MAIN PROMOTIONAL BANNER -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="tag">THE BIGGEST SALE OF THE SEASON</span>
+            <h1>Shop Your Favorites at Amazing Prices!</h1>
+            <p>
+                Discover the latest fashion, electronics, accessories and
+                lifestyle products. Enjoy great deals and upgrade your style.
+            </p>
+            <a href="#products" class="btn">Explore Products →</a>
+        </div>
+
+        <div class="hero-image">🛍️</div>
+    </section>
+
+    <!-- SHOPPING BENEFITS -->
+    <section class="benefits">
+        <div class="benefit">
+            <div class="emoji">🚚</div>
+            <h3>Free Delivery</h3>
+            <p>On eligible orders</p>
+        </div>
+
+        <div class="benefit">
+            <div class="emoji">🔒</div>
+            <h3>Secure Shopping</h3>
+            <p>Your safety matters</p>
+        </div>
+
+        <div class="benefit">
+            <div class="emoji">↩️</div>
+            <h3>Easy Returns</h3>
+            <p>On eligible products</p>
+        </div>
+
+        <div class="benefit">
+            <div class="emoji">💬</div>
+            <h3>Customer Support</h3>
+            <p>Here to help you</p>
+        </div>
+    </section>
+
+    <!-- CATEGORIES SECTION -->
+    <section class="section" id="categories">
+        <div class="section-heading">
+            <h2>Shop by Category</h2>
+            <a href="#products">Explore All →</a>
+        </div>
+
+        <div class="category-grid">
+            <a href="#electronics" class="category-card">
+                <div class="emoji">📱</div>
+                <h3>Electronics</h3>
+                <p>Smart gadgets</p>
+            </a>
+
+            <a href="#fashion" class="category-card">
+                <div class="emoji">👗</div>
+                <h3>Fashion</h3>
+                <p>Latest styles</p>
+            </a>
+
+            <a href="#accessories" class="category-card">
+                <div class="emoji">⌚</div>
+                <h3>Accessories</h3>
+                <p>Everyday essentials</p>
+            </a>
+
+            <a href="#home-products" class="category-card">
+                <div class="emoji">🏠</div>
+                <h3>Home</h3>
+                <p>Comfort and style</p>
+            </a>
+
+            <a href="#footwear" class="category-card">
+                <div class="emoji">👟</div>
+                <h3>Footwear</h3>
+                <p>Walk in comfort</p>
+            </a>
+
+            <a href="#beauty" class="category-card">
+                <div class="emoji">💄</div>
+                <h3>Beauty</h3>
+                <p>Beauty essentials</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- SPECIAL OFFERS -->
+    <section class="section" id="offers">
+        <div class="section-heading">
+            <h2>Special Offers</h2>
+        </div>
+
+        <div class="promo-grid">
+            <div class="promo-card promo-one">
+                <div>
+                    <p>LIMITED-TIME DEAL</p>
+                    <h3>Upgrade Your Gadgets!</h3>
+                    <p>Save more on selected electronics.</p>
+                    <a href="#electronics">Shop Electronics</a>
+                </div>
+                <div class="emoji">🎧</div>
+            </div>
+
+            <div class="promo-card promo-two">
+                <div>
+                    <p>STYLE COLLECTION</p>
+                    <h3>Refresh Your Wardrobe!</h3>
+                    <p>Find styles for every occasion.</p>
+                    <a href="#fashion">Shop Fashion</a>
+                </div>
+                <div class="emoji">👚</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="section" id="products">
+        <div class="section-heading">
+            <h2>Featured Products</h2>
+            <a href="#electronics">View All →</a>
+        </div>
+
+        <div class="product-grid">
+
+            <!-- PRODUCT 1 -->
+            <article class="product-card" id="electronics">
+                <div class="product-image">
+                    <span class="sale-label">25% OFF</span>
+                    <img src="https://placehold.co/300x220/eaf1ff/172554?text=Headphones"
+                         alt="Wireless headphones">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">Electronics</p>
+                    <h3>Wireless Headphones</h3>
+                    <p class="description">
+                        Enjoy clear sound, soft ear cushions and wireless listening.
+                    </p>
+                    <p class="rating">★★★★★ <span>(4.5 / 5)</span></p>
+                    <p class="price">₹1,499 <span class="old-price">₹1,999</span></p>
+                    <p class="discount-text">You save ₹500</p>
+
+                    <div class="product-buttons">
+                        <a href="#cart" class="cart-btn">Add to Cart</a>
+                        <a href="#cart" class="buy-btn">Buy Now</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PRODUCT 2 -->
+            <article class="product-card" id="accessories">
+                <div class="product-image">
+                    <span class="sale-label">30% OFF</span>
+                    <img src="https://placehold.co/300x220/faf1e8/172554?text=Smart+Watch"
+                         alt="Smart watch">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">Accessories</p>
+                    <h3>Smart Watch</h3>
+                    <p class="description">
+                        Track your activity and stay connected throughout the day.
+                    </p>
+                    <p class="rating">★★★★☆ <span>(4.2 / 5)</span></p>
+                    <p class="price">₹2,499 <span class="old-price">₹3,570</span></p>
+                    <p class="discount-text">You save ₹1,071</p>
+
+                    <div class="product-buttons">
+                        <a href="#cart" class="cart-btn">Add to Cart</a>
+                        <a href="#cart" class="buy-btn">Buy Now</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PRODUCT 3 -->
+            <article class="product-card" id="footwear">
+                <div class="product-image">
+                    <span class="sale-label">40% OFF</span>
+                    <img src="https://placehold.co/300x220/eaf8ee/172554?text=Sneakers"
+                         alt="Casual sneakers">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">Footwear</p>
+                    <h3>Casual Sneakers</h3>
+                    <p class="description">
+                        Comfortable everyday sneakers with a modern design.
+                    </p>
+                    <p class="rating">★★★★★ <span>(4.7 / 5)</span></p>
+                    <p class="price">₹1,799 <span class="old-price">₹2,999</span></p>
+                    <p class="discount-text">You save ₹1,200</p>
+
+                    <div class="product-buttons">
+                        <a href="#cart" class="cart-btn">Add to Cart</a>
+                        <a href="#cart" class="buy-btn">Buy Now</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PRODUCT 4 -->
+            <article class="product-card" id="fashion">
+                <div class="product-image">
+                    <span class="sale-label">20% OFF</span>
+                    <img src="https://placehold.co/300x220/fff0f5/172554?text=Handbag"
+                         alt="Fashion handbag">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">Fashion</p>
+                    <h3>Stylish Handbag</h3>
+                    <p class="description">
+                        A trendy bag with space for all your daily essentials.
+                    </p>
+                    <p class="rating">★★★★☆ <span>(4.3 / 5)</span></p>
+                    <p class="price">₹999 <span class="old-price">₹1,249</span></p>
+                    <p class="discount-text">You save ₹250</p>
+
+                    <div class="product-buttons">
+                        <a href="#cart" class="cart-btn">Add to Cart</a>
+                        <a href="#cart" class="buy-btn">Buy Now</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PRODUCT 5 -->
+            <article class="product-card" id="home-products">
+                <div class="product-image">
+                    <span class="sale-label">15% OFF</span>
+                    <img src="https://placehold.co/300x220/fef3c7/172554?text=Table+Lamp"
+                         alt="Decorative table lamp">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">Home</p>
+                    <h3>Decorative Table Lamp</h3>
+                    <p class="description">
+                        Create a warm atmosphere with a stylish bedside lamp.
+                    </p>
+                    <p class="rating">★★★★☆ <span>(4.1 / 5)</span></p>
+                    <p class="price">₹849 <span class="old-price">₹999</span></p>
+                    <p class="discount-text">You save ₹150</p>
+
+                    <div class="product-buttons">
+                        <a href="#cart" class="cart-btn">Add to Cart</a>
+                        <a href="#cart" class="buy-btn">Buy Now</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PRODUCT 6 -->
+            <article class="product-card" id="beauty">
+                <div class="product-image">
+                    <span class="sale-label">35% OFF</span>
+                    <img src="https://placehold.co/300x220/fce7f3/172554?text=Beauty+Kit"
+                         alt="Beauty care kit">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">Beauty</p>
+                    <h3>Beauty Care Kit</h3>
+                    <p class="description">
+                        A convenient collection of everyday beauty essentials.
+                    </p>
+                    <p class="rating">★★★★★ <span>(4.6 / 5)</span></p>
+                    <p class="price">₹649 <span class="old-price">₹999</span></p>
+                    <p class="discount-text">You save ₹350</p>
+
+                    <div class="product-buttons">
+                        <a href="#cart" class="cart-btn">Add to Cart</a>
+                        <a href="#cart" class="buy-btn">Buy Now</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PRODUCT 7 -->
+            <article class="product-card">
+                <div class="product-image">
+                    <span class="sale-label">20% OFF</span>
+                    <img src="https://placehold.co/300x220/e0f2fe/172554?text=Backpack"
+                         alt="Travel backpack">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">Accessories</p>
+                    <h3>Travel Backpack</h3>
+                    <p class="description">
+                        A practical backpack for college, work and travel.
+                    </p>
+                    <p class="rating">★★★★☆ <span>(4.4 / 5)</span></p>
+                    <p class="price">₹1,199 <span class="old-price">₹1,499</span></p>
+                    <p class="discount-text">You save ₹300</p>
+
+                    <div class="product-buttons">
+                        <a href="#cart" class="cart-btn">Add to Cart</a>
+                        <a href="#cart" class="buy-btn">Buy Now</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PRODUCT 8 -->
+            <article class="product-card">
+                <div class="product-image">
+                    <span class="sale-label">10% OFF</span>
+                    <img src="https://placehold.co/300x220/f3e8ff/172554?text=Bluetooth+Speaker"
+                         alt="Bluetooth speaker">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">Electronics</p>
+                    <h3>Bluetooth Speaker</h3>
+                    <p class="description">
+                        Enjoy portable music with rich sound and a compact design.
+                    </p>
+                    <p class="rating">★★★★☆ <span>(4.0 / 5)</span></p>
+                    <p class="price">₹899 <span class="old-price">₹999</span></p>
+                    <p class="discount-text">You save ₹100</p>
+
+                    <div class="product-buttons">
+                        <a href="#cart" class="cart-btn">Add to Cart</a>
+                        <a href="#cart" class="buy-btn">Buy Now</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- NEWSLETTER SECTION -->
+    <section class="newsletter">
+        <h2>Join the ShopEasy Family!</h2>
+        <p>Discover new arrivals, shopping inspiration and special offers.</p>
+
+        <form action="#" method="get">
+            <input type="email" placeholder="Enter your email address"
+                   aria-label="Email address" required>
+            <button type="submit">Subscribe Now</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="footer-grid">
+
+            <div class="footer-column">
+                <h3>ShopEasy 🛍️</h3>
+                <p>
+                    Your online destination for fashion, electronics,
+                    accessories and everyday essentials.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#products">Featured Products</a>
+                <a href="#offers">Special Offers</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <a href="#footer">Help Center</a>
+                <a href="#footer">Shipping Information</a>
+                <a href="#footer">Return Policy</a>
+                <a href="#footer">Privacy Policy</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>📧 support@shopeasy.example</p>
+                <p>📞 +91 98765 43210</p>
+                <p>📍 India</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 ShopEasy. All rights reserved.</p>
+            <p>Made with care for a better shopping experience.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
