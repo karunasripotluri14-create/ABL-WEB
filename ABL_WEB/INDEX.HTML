@@ -2,12 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopEasy - Online Shopping Website</title>
-
-    <style>
-        /* GENERAL STYLING */
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -17,7 +12,6 @@
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: Arial, sans-serif;
             background-color: #f5f7fb;
@@ -28,8 +22,6 @@
         a {
             text-decoration: none;
         }
-
-        /* TOP OFFER BAR */
         .top-bar {
             background-color: #172554;
             color: white;
@@ -54,7 +46,6 @@
             gap: 18px;
             box-shadow: 0 2px 8px #0000000d;
         }
-
         .logo {
             color: #2563eb;
             font-size: 28px;
@@ -73,24 +64,19 @@
             border-radius: 8px;
             font-size: 14px;
         }
-
         .header-links {
             display: flex;
             gap: 18px;
             flex-wrap: wrap;
         }
-
         .header-links a {
             color: #252b42;
             font-weight: bold;
             font-size: 14px;
         }
-
         .header-links a:hover {
             color: #2563eb;
         }
-
-        /* NAVIGATION */
         nav {
             background-color: #2563eb;
             padding: 13px 6%;
@@ -99,18 +85,14 @@
             gap: 35px;
             flex-wrap: wrap;
         }
-
         nav a {
             color: white;
             font-size: 15px;
             font-weight: bold;
         }
-
         nav a:hover {
             color: #fde68a;
         }
-
-        /* HERO BANNER */
         .hero {
             margin: 28px auto;
             width: 90%;
@@ -478,36 +460,6 @@
             cursor: pointer;
         }
 
-        /* FOOTER */
-        footer {
-            background-color: #0f172a;
-            color: #cbd5e1;
-            padding: 40px 6% 20px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-
-        .footer-column h3 {
-            color: white;
-            margin-bottom: 15px;
-        }
-
-        .footer-column p,
-        .footer-column a {
-            display: block;
-            color: #cbd5e1;
-            font-size: 14px;
-            margin: 8px 0;
-        }
-
-        .footer-column a:hover {
-            color: #60a5fa;
-        }
-
         .copyright {
             text-align: center;
             border-top: 1px solid #334155;
@@ -516,106 +468,12 @@
             font-size: 13px;
         }
 
-        /* TABLET RESPONSIVENESS */
-        @media (max-width: 1000px) {
-            .product-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .category-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .benefits {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero h1 {
-                font-size: 34px;
-            }
-        }
-
-        /* MOBILE RESPONSIVENESS */
-        @media (max-width: 600px) {
-            header {
-                justify-content: center;
-                text-align: center;
-            }
-
-            .search-box {
-                width: 100%;
-            }
-
-            nav {
-                gap: 15px;
-                padding: 15px 10px;
-            }
-
-            nav a {
-                font-size: 13px;
-            }
-
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px 20px;
-            }
-
-            .hero h1 {
-                font-size: 29px;
-            }
-
-            .hero-image {
-                font-size: 85px;
-            }
-
-            .category-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .promo-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .promo-card {
-                padding: 22px;
-            }
-
-            .promo-card h3 {
-                font-size: 19px;
-            }
-
-            .promo-card .emoji {
-                font-size: 45px;
-            }
-
-            .benefits {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .section-heading h2 {
-                font-size: 23px;
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
     </style>
 </head>
-
 <body>
-
-    <!-- TOP OFFER BAR -->
     <div class="top-bar">
         🎉 Mega Shopping Sale! <span>Up to 50% OFF</span> on selected products.
     </div>
-
-    <!-- HEADER -->
     <header>
         <a href="#home" class="logo">Shop<span>Easy</span> 🛍️</a>
 
@@ -629,8 +487,6 @@
             <a href="#products">🛒 My Cart</a>
         </div>
     </header>
-
-    <!-- NAVIGATION BAR -->
     <nav>
         <a href="#home">Home</a>
         <a href="#categories">Categories</a>
@@ -639,8 +495,6 @@
         <a href="#offers">Special Offers</a>
         <a href="#footer">Contact Us</a>
     </nav>
-
-    <!-- MAIN PROMOTIONAL BANNER -->
     <section class="hero" id="home">
         <div class="hero-content">
             <span class="tag">THE BIGGEST SALE OF THE SEASON</span>
@@ -651,11 +505,9 @@
             </p>
             <a href="#products" class="btn">Explore Products →</a>
         </div>
-
         <div class="hero-image">🛍️</div>
     </section>
 
-    <!-- SHOPPING BENEFITS -->
     <section class="benefits">
         <div class="benefit">
             <div class="emoji">🚚</div>
@@ -682,7 +534,6 @@
         </div>
     </section>
 
-    <!-- CATEGORIES SECTION -->
     <section class="section" id="categories">
         <div class="section-heading">
             <h2>Shop by Category</h2>
@@ -728,7 +579,6 @@
         </div>
     </section>
 
-    <!-- SPECIAL OFFERS -->
     <section class="section" id="offers">
         <div class="section-heading">
             <h2>Special Offers</h2>
@@ -757,7 +607,7 @@
         </div>
     </section>
 
-    <!-- FEATURED PRODUCTS -->
+
     <section class="section" id="products">
         <div class="section-heading">
             <h2>Featured Products</h2>
@@ -766,7 +616,6 @@
 
         <div class="product-grid">
 
-            <!-- PRODUCT 1 -->
             <article class="product-card" id="electronics">
                 <div class="product-image">
                     <span class="sale-label">25% OFF</span>
@@ -791,7 +640,6 @@
                 </div>
             </article>
 
-            <!-- PRODUCT 2 -->
             <article class="product-card" id="accessories">
                 <div class="product-image">
                     <span class="sale-label">30% OFF</span>
@@ -816,7 +664,6 @@
                 </div>
             </article>
 
-            <!-- PRODUCT 3 -->
             <article class="product-card" id="footwear">
                 <div class="product-image">
                     <span class="sale-label">40% OFF</span>
@@ -841,7 +688,6 @@
                 </div>
             </article>
 
-            <!-- PRODUCT 4 -->
             <article class="product-card" id="fashion">
                 <div class="product-image">
                     <span class="sale-label">20% OFF</span>
@@ -866,7 +712,6 @@
                 </div>
             </article>
 
-            <!-- PRODUCT 5 -->
             <article class="product-card" id="home-products">
                 <div class="product-image">
                     <span class="sale-label">15% OFF</span>
@@ -891,7 +736,6 @@
                 </div>
             </article>
 
-            <!-- PRODUCT 6 -->
             <article class="product-card" id="beauty">
                 <div class="product-image">
                     <span class="sale-label">35% OFF</span>
@@ -916,7 +760,7 @@
                 </div>
             </article>
 
-            <!-- PRODUCT 7 -->
+
             <article class="product-card">
                 <div class="product-image">
                     <span class="sale-label">20% OFF</span>
@@ -941,7 +785,6 @@
                 </div>
             </article>
 
-            <!-- PRODUCT 8 -->
             <article class="product-card">
                 <div class="product-image">
                     <span class="sale-label">10% OFF</span>
@@ -965,11 +808,8 @@
                     </div>
                 </div>
             </article>
-
         </div>
     </section>
-
-    <!-- NEWSLETTER SECTION -->
     <section class="newsletter">
         <h2>Join the ShopEasy Family!</h2>
         <p>Discover new arrivals, shopping inspiration and special offers.</p>
@@ -980,49 +820,5 @@
             <button type="submit">Subscribe Now</button>
         </form>
     </section>
-
-    <!-- FOOTER -->
-    <footer id="footer">
-        <div class="footer-grid">
-
-            <div class="footer-column">
-                <h3>ShopEasy 🛍️</h3>
-                <p>
-                    Your online destination for fashion, electronics,
-                    accessories and everyday essentials.
-                </p>
-            </div>
-
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <a href="#home">Home</a>
-                <a href="#categories">Categories</a>
-                <a href="#products">Featured Products</a>
-                <a href="#offers">Special Offers</a>
-            </div>
-
-            <div class="footer-column">
-                <h3>Customer Service</h3>
-                <a href="#footer">Help Center</a>
-                <a href="#footer">Shipping Information</a>
-                <a href="#footer">Return Policy</a>
-                <a href="#footer">Privacy Policy</a>
-            </div>
-
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <p>📧 support@shopeasy.example</p>
-                <p>📞 +91 98765 43210</p>
-                <p>📍 India</p>
-            </div>
-
-        </div>
-
-        <div class="copyright">
-            <p>© 2026 ShopEasy. All rights reserved.</p>
-            <p>Made with care for a better shopping experience.</p>
-        </div>
-    </footer>
-
 </body>
 </html>
