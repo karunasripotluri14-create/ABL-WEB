@@ -2,12 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore India | Tourism & Heritage</title>
 
     <style>
-        /* GENERAL STYLING */
         * {
             margin: 0;
             padding: 0;
@@ -34,7 +31,6 @@
             text-decoration: none;
         }
 
-        /* TOP BAR */
         .top-bar {
             background-color: #51351e;
             color: white;
@@ -47,8 +43,6 @@
             color: #ffd58a;
             font-weight: bold;
         }
-
-        /* HEADER */
         header {
             background-color: #fffdf8;
             padding: 20px 6%;
@@ -84,8 +78,6 @@
             color: #715a43;
             font-size: 13px;
         }
-
-        /* NAVIGATION BAR */
         nav {
             display: flex;
             justify-content: center;
@@ -105,8 +97,6 @@
         nav a:hover {
             color: #ffdf9e;
         }
-
-        /* HERO SECTION */
         .hero {
             min-height: 450px;
             margin: 25px auto;
@@ -163,8 +153,6 @@
         .primary-btn:hover {
             background-color: #ffcc80;
         }
-
-        /* INTRODUCTION */
         .intro {
             width: 85%;
             max-width: 1000px;
@@ -189,8 +177,6 @@
         .intro p {
             color: #75685a;
         }
-
-        /* COMMON SECTIONS */
         .section {
             width: 90%;
             margin: 55px auto;
@@ -221,7 +207,6 @@
             font-size: 14px;
         }
 
-        /* REGIONS */
         .region-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -269,8 +254,6 @@
             font-size: 13px;
             margin-top: 12px;
         }
-
-        /* ATTRACTION TYPE FILTER LINKS */
         .filter-list {
             display: flex;
             gap: 12px;
@@ -292,8 +275,6 @@
             background-color: #a64b25;
             color: white;
         }
-
-        /* DESTINATION CARDS */
         .destination-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -375,8 +356,6 @@
             color: #795c42;
             font-size: 12px;
         }
-
-        /* HERITAGE HIGHLIGHT */
         .heritage {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -413,7 +392,6 @@
             font-size: 14px;
         }
 
-        /* FESTIVALS */
         .festival-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -455,8 +433,6 @@
             font-size: 12px;
             font-weight: bold;
         }
-
-        /* LOCAL CUISINE */
         .cuisine-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -491,7 +467,6 @@
             font-size: 13px;
         }
 
-        /* IMAGE GALLERY */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -518,8 +493,6 @@
         .gallery-item.tall {
             grid-row: span 2;
         }
-
-        /* TRAVEL TIPS */
         .tips-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -546,8 +519,6 @@
             color: #75685a;
             font-size: 14px;
         }
-
-        /* TRAVEL PLANNING BANNER */
         .planning {
             background: linear-gradient(110deg, #71351f, #a64b25);
             border-radius: 16px;
@@ -574,8 +545,6 @@
             border-radius: 6px;
             font-weight: bold;
         }
-
-        /* FOOTER */
         footer {
             background-color: #30251d;
             color: #e6d8ca;
@@ -614,116 +583,12 @@
             font-size: 12px;
         }
 
-        /* TABLET RESPONSIVENESS */
-        @media (max-width: 1000px) {
-            .region-grid,
-            .cuisine-grid,
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .destination-grid,
-            .festival-grid,
-            .tips-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* MOBILE RESPONSIVENESS */
-        @media (max-width: 600px) {
-            header {
-                justify-content: center;
-                text-align: center;
-            }
-
-            .search-box {
-                width: 100%;
-            }
-
-            nav {
-                gap: 14px;
-                padding: 15px 10px;
-            }
-
-            nav a {
-                font-size: 12px;
-            }
-
-            .hero {
-                min-height: 400px;
-                padding: 30px 22px;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .intro h2 {
-                font-size: 26px;
-            }
-
-            .section-heading h2 {
-                font-size: 24px;
-            }
-
-            .region-grid,
-            .destination-grid,
-            .festival-grid,
-            .cuisine-grid,
-            .tips-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .heritage {
-                grid-template-columns: 1fr;
-                padding: 20px;
-            }
-
-            .heritage img {
-                height: 250px;
-            }
-
-            .heritage h2 {
-                font-size: 25px;
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-auto-rows: 150px;
-            }
-
-            .planning {
-                padding: 30px 20px;
-            }
-
-            .planning h2 {
-                font-size: 24px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
-
 <body>
-
-    <!-- TOP BAR -->
     <div class="top-bar">
         Discover the beauty of India — <span>Culture, Heritage and Incredible Destinations!</span>
     </div>
-
-    <!-- HEADER -->
     <header>
         <a href="#home" class="logo">Explore<span>India</span> ✦</a>
 
@@ -736,8 +601,6 @@
             🌏 Discover. Explore. Experience.
         </div>
     </header>
-
-    <!-- NAVIGATION -->
     <nav>
         <a href="#home">Home</a>
         <a href="#regions">Regions</a>
@@ -748,8 +611,6 @@
         <a href="#gallery">Gallery</a>
         <a href="#tips">Travel Tips</a>
     </nav>
-
-    <!-- HERO BANNER -->
     <section class="hero" id="home">
         <div class="hero-content">
             <span class="hero-tag">INCREDIBLE INDIA</span>
@@ -767,8 +628,6 @@
             </a>
         </div>
     </section>
-
-    <!-- INTRODUCTION -->
     <section class="intro">
         <span class="eyebrow">Welcome to Explore India</span>
         <h2>A Journey Through History, Culture and Nature</h2>
@@ -783,8 +642,6 @@
             discover India's remarkable heritage.
         </p>
     </section>
-
-    <!-- REGIONS -->
     <section class="section" id="regions">
         <div class="section-heading">
             <div>
@@ -792,13 +649,10 @@
                 <p>Discover the traditions and landscapes of different regions.</p>
             </div>
         </div>
-
         <div class="region-grid">
-
             <article class="region-card">
                 <img src="https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?auto=format&fit=crop&w=700&q=80"
                      alt="Rajasthan palace architecture">
-
                 <div class="region-info">
                     <h3>North India</h3>
                     <p>
@@ -808,7 +662,6 @@
                     <a href="#north">Explore North India →</a>
                 </div>
             </article>
-
             <article class="region-card">
                 <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=80"
                      alt="Kerala backwaters">
@@ -822,11 +675,9 @@
                     <a href="#south">Explore South India →</a>
                 </div>
             </article>
-
             <article class="region-card">
                 <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=80"
                      alt="Goa beach">
-
                 <div class="region-info">
                     <h3>West India</h3>
                     <p>
@@ -836,11 +687,9 @@
                     <a href="#west">Explore West India →</a>
                 </div>
             </article>
-
             <article class="region-card">
                 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80"
                      alt="Mountain landscape">
-
                 <div class="region-info">
                     <h3>East and Northeast</h3>
                     <p>
@@ -850,11 +699,8 @@
                     <a href="#east">Explore East India →</a>
                 </div>
             </article>
-
         </div>
     </section>
-
-    <!-- ATTRACTION TYPES -->
     <section class="section" id="destinations">
         <div class="section-heading">
             <div>
@@ -862,7 +708,6 @@
                 <p>Explore historical landmarks, nature escapes and cultural attractions.</p>
             </div>
         </div>
-
         <div class="filter-list">
             <a href="#north">Historical Monuments</a>
             <a href="#south">Temples</a>
@@ -870,17 +715,13 @@
             <a href="#east">Nature and Mountains</a>
             <a href="#festivals">Cultural Attractions</a>
         </div>
-
         <div class="destination-grid">
-
-            <!-- TAJ MAHAL -->
             <article class="destination-card" id="north">
                 <div class="destination-image">
                     <span class="destination-label">HERITAGE</span>
                     <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=85"
                          alt="Taj Mahal in Agra">
                 </div>
-
                 <div class="destination-info">
                     <span class="location">Agra, Uttar Pradesh</span>
                     <h3>Taj Mahal</h3>
@@ -889,22 +730,18 @@
                         Mughal emperor Shah Jahan. It is celebrated for
                         its architecture and craftsmanship.
                     </p>
-
                     <div class="destination-meta">
                         <span>🏛️ Monument</span>
                         <span>📸 Photography</span>
                     </div>
                 </div>
             </article>
-
-            <!-- JAIPUR -->
             <article class="destination-card">
                 <div class="destination-image">
                     <span class="destination-label">ROYAL HERITAGE</span>
                     <img src="https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?auto=format&fit=crop&w=900&q=85"
                          alt="Historic palace in Rajasthan">
                 </div>
-
                 <div class="destination-info">
                     <span class="location">Jaipur, Rajasthan</span>
                     <h3>The Pink City</h3>
@@ -913,22 +750,18 @@
                         royal palaces, forts, handicrafts and traditional
                         Rajasthani culture.
                     </p>
-
                     <div class="destination-meta">
                         <span>🏰 Palaces</span>
                         <span>🛍️ Shopping</span>
                     </div>
                 </div>
             </article>
-
-            <!-- VARANASI -->
             <article class="destination-card">
                 <div class="destination-image">
                     <span class="destination-label">CULTURE</span>
                     <img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=900&q=85"
                          alt="Varanasi riverfront">
                 </div>
-
                 <div class="destination-info">
                     <span class="location">Varanasi, Uttar Pradesh</span>
                     <h3>Varanasi Ghats</h3>
@@ -937,22 +770,18 @@
                         spiritual traditions, temples and historic
                         cultural atmosphere.
                     </p>
-
                     <div class="destination-meta">
                         <span>🛕 Spirituality</span>
                         <span>🌅 Riverfront</span>
                     </div>
                 </div>
             </article>
-
-            <!-- KERALA -->
-            <article class="destination-card" id="south">
+                 <article class="destination-card" id="south">
                 <div class="destination-image">
                     <span class="destination-label">NATURE ESCAPE</span>
                     <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85"
                          alt="Kerala backwaters and greenery">
                 </div>
-
                 <div class="destination-info">
                     <span class="location">Alappuzha, Kerala</span>
                     <h3>Kerala Backwaters</h3>
@@ -960,22 +789,18 @@
                         Explore peaceful waterways, green landscapes,
                         coconut palms and traditional houseboat journeys.
                     </p>
-
                     <div class="destination-meta">
                         <span>🚤 Houseboats</span>
                         <span>🌿 Nature</span>
                     </div>
                 </div>
             </article>
-
-            <!-- HAMPI -->
             <article class="destination-card">
                 <div class="destination-image">
                     <span class="destination-label">ANCIENT HISTORY</span>
                     <img src="https://images.unsplash.com/photo-1600100397608-f0106f4c0f52?auto=format&fit=crop&w=900&q=85"
                          alt="Ancient stone ruins">
                 </div>
-
                 <div class="destination-info">
                     <span class="location">Hampi, Karnataka</span>
                     <h3>Historic Hampi</h3>
@@ -984,22 +809,18 @@
                         including stone temples, monuments and remarkable
                         historic landscapes.
                     </p>
-
                     <div class="destination-meta">
                         <span>🗿 Ruins</span>
                         <span>📜 History</span>
                     </div>
                 </div>
             </article>
-
-            <!-- GOA -->
             <article class="destination-card" id="west">
                 <div class="destination-image">
                     <span class="destination-label">BEACH HOLIDAY</span>
                     <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85"
                          alt="Goa coastline">
                 </div>
-
                 <div class="destination-info">
                     <span class="location">Goa, West India</span>
                     <h3>Goa Beaches</h3>
@@ -1007,22 +828,18 @@
                         Enjoy sandy beaches, coastal scenery, Portuguese-era
                         architecture, seafood and lively local markets.
                     </p>
-
                     <div class="destination-meta">
                         <span>🏖️ Beaches</span>
                         <span>🌊 Coastal Life</span>
                     </div>
                 </div>
             </article>
-
-            <!-- DARJEELING -->
             <article class="destination-card" id="east">
                 <div class="destination-image">
                     <span class="destination-label">MOUNTAIN VIEW</span>
                     <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=85"
                          alt="Mountain scenery in the Himalayas">
                 </div>
-
                 <div class="destination-info">
                     <span class="location">Darjeeling, West Bengal</span>
                     <h3>Darjeeling Hills</h3>
@@ -1030,22 +847,18 @@
                         Known for its tea gardens, mountain views, cool
                         weather and historic Himalayan railway.
                     </p>
-
                     <div class="destination-meta">
                         <span>⛰️ Mountains</span>
                         <span>🍃 Tea Gardens</span>
                     </div>
                 </div>
             </article>
-
-            <!-- MEGHALAYA -->
             <article class="destination-card">
                 <div class="destination-image">
                     <span class="destination-label">NATURAL WONDER</span>
                     <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=85"
                          alt="Green natural landscape">
                 </div>
-
                 <div class="destination-info">
                     <span class="location">Meghalaya, Northeast India</span>
                     <h3>Meghalaya Landscapes</h3>
@@ -1053,22 +866,18 @@
                         Explore green hills, waterfalls, caves, living root
                         bridges and unique local traditions.
                     </p>
-
                     <div class="destination-meta">
                         <span>🌿 Nature</span>
                         <span>💧 Waterfalls</span>
                     </div>
                 </div>
             </article>
-
-            <!-- HYDERABAD -->
             <article class="destination-card">
                 <div class="destination-image">
                     <span class="destination-label">CITY HERITAGE</span>
                     <img src="https://images.unsplash.com/photo-1572445271230-a78b5944a659?auto=format&fit=crop&w=900&q=85"
                          alt="Historic Indian architecture">
                 </div>
-
                 <div class="destination-info">
                     <span class="location">Hyderabad, Telangana</span>
                     <h3>City of the Charminar</h3>
@@ -1083,21 +892,16 @@
                     </div>
                 </div>
             </article>
-
         </div>
     </section>
-
-    <!-- HERITAGE SECTION -->
     <section class="section" id="heritage">
         <div class="heritage">
             <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=1000&q=85"
                  alt="Intricate Indian historic architecture">
-
             <div>
                 <span class="eyebrow">Preserving Our Past</span>
 
                 <h2>India's Rich Historical Heritage</h2>
-
                 <p>
                     India's heritage reflects centuries of artistic
                     achievements, architectural innovation and cultural
@@ -1105,9 +909,7 @@
                     archaeological sites preserve stories from different
                     periods of history.
                 </p>
-
                 <p>Popular heritage experiences include:</p>
-
                 <ul>
                     <li>Exploring ancient forts and royal palaces.</li>
                     <li>Learning about historic monuments and empires.</li>
@@ -1115,15 +917,12 @@
                     <li>Visiting museums and archaeological sites.</li>
                     <li>Respecting and helping preserve heritage locations.</li>
                 </ul>
-
                 <a href="#destinations" class="primary-btn">
                     Discover Heritage Sites →
                 </a>
             </div>
         </div>
     </section>
-
-    <!-- CULTURAL FESTIVALS -->
     <section class="section" id="festivals">
         <div class="section-heading">
             <div>
@@ -1131,9 +930,7 @@
                 <p>Experience India's traditions through music, dance, food and celebrations.</p>
             </div>
         </div>
-
         <div class="festival-grid">
-
             <article class="festival-card">
                 <img src="https://images.unsplash.com/photo-1605197138185-1f8c6f3c65b6?auto=format&fit=crop&w=800&q=80"
                      alt="Colorful Indian festival celebration">
@@ -1148,11 +945,9 @@
                     <span>🪔 LIGHTS • SWEETS • CELEBRATION</span>
                 </div>
             </article>
-
             <article class="festival-card">
                 <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
                      alt="People celebrating a colorful festival">
-
                 <div class="festival-info">
                     <h3>Holi</h3>
                     <p>
@@ -1162,11 +957,9 @@
                     <span>🎨 COLORS • MUSIC • JOY</span>
                 </div>
             </article>
-
             <article class="festival-card">
                 <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80"
                      alt="Traditional cultural performance">
-
                 <div class="festival-info">
                     <h3>Onam</h3>
                     <p>
@@ -1177,11 +970,9 @@
                     <span>🌼 CULTURE • FEASTS • TRADITION</span>
                 </div>
             </article>
-
             <article class="festival-card">
                 <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=800&q=80"
                      alt="Classical music and dance performance">
-
                 <div class="festival-info">
                     <h3>Classical Arts Festivals</h3>
                     <p>
@@ -1192,11 +983,9 @@
                     <span>🎶 MUSIC • DANCE • ART</span>
                 </div>
             </article>
-
             <article class="festival-card">
                 <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80"
                      alt="Traditional festive decorations">
-
                 <div class="festival-info">
                     <h3>Pongal</h3>
                     <p>
@@ -1207,7 +996,6 @@
                     <span>🌾 HARVEST • FOOD • GRATITUDE</span>
                 </div>
             </article>
-
             <article class="festival-card">
                 <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80"
                      alt="Outdoor cultural celebration">
@@ -1221,11 +1009,8 @@
                     <span>🎭 FOLK ART • CRAFTS • CULTURE</span>
                 </div>
             </article>
-
         </div>
     </section>
-
-    <!-- LOCAL CUISINE -->
     <section class="section" id="cuisine">
         <div class="section-heading">
             <div>
@@ -1233,13 +1018,10 @@
                 <p>Every region has its own ingredients, cooking methods and food traditions.</p>
             </div>
         </div>
-
         <div class="cuisine-grid">
-
             <article class="cuisine-card">
                 <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=700&q=80"
                      alt="Indian biryani">
-
                 <div class="cuisine-info">
                     <h3>Hyderabadi Biryani</h3>
                     <p>
@@ -1248,11 +1030,9 @@
                     </p>
                 </div>
             </article>
-
             <article class="cuisine-card">
                 <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=700&q=80"
                      alt="South Indian meal">
-
                 <div class="cuisine-info">
                     <h3>South Indian Cuisine</h3>
                     <p>
@@ -1261,11 +1041,9 @@
                     </p>
                 </div>
             </article>
-
             <article class="cuisine-card">
                 <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=700&q=80"
                      alt="Indian curry">
-
                 <div class="cuisine-info">
                     <h3>North Indian Curries</h3>
                     <p>
@@ -1274,7 +1052,6 @@
                     </p>
                 </div>
             </article>
-
             <article class="cuisine-card">
                 <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"
                      alt="Indian snacks">
@@ -1287,11 +1064,8 @@
                     </p>
                 </div>
             </article>
-
         </div>
     </section>
-
-    <!-- IMAGE GALLERY -->
     <section class="section" id="gallery">
         <div class="section-heading">
             <div>
@@ -1299,126 +1073,41 @@
                 <p>A visual journey through India's architecture, landscapes and culture.</p>
             </div>
         </div>
-
         <div class="gallery-grid">
-
             <a href="#north" class="gallery-item tall">
                 <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=700&q=80"
                      alt="Taj Mahal architecture">
             </a>
-
             <a href="#south" class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=80"
                      alt="Kerala backwaters">
             </a>
-
             <a href="#west" class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=80"
                      alt="Indian beach scenery">
             </a>
-
             <a href="#north" class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?auto=format&fit=crop&w=700&q=80"
                      alt="Historic palace">
             </a>
-
             <a href="#east" class="gallery-item tall">
                 <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=700&q=80"
                      alt="Himalayan mountains">
             </a>
-
             <a href="#heritage" class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=700&q=80"
                      alt="Indian architectural details">
             </a>
-
             <a href="#festivals" class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=80"
                      alt="Festival celebration">
             </a>
-
             <a href="#cuisine" class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=700&q=80"
                      alt="Traditional Indian food">
             </a>
-
         </div>
     </section>
-
-    <!-- TRAVEL TIPS -->
-    <section class="section" id="tips">
-        <div class="section-heading">
-            <div>
-                <h2>Useful Travel Tips</h2>
-                <p>Plan a comfortable, safe and memorable trip.</p>
-            </div>
-        </div>
-
-        <div class="tips-grid">
-
-            <article class="tip-card">
-                <div class="emoji">🗓️</div>
-                <h3>Plan Your Visit</h3>
-                <p>
-                    Research the destination, local climate, attraction
-                    timings, public holidays and entry requirements
-                    before travelling.
-                </p>
-            </article>
-
-            <article class="tip-card">
-                <div class="emoji">🎒</div>
-                <h3>Pack Smartly</h3>
-                <p>
-                    Carry comfortable clothing, suitable footwear,
-                    identification, medicines you need, water and
-                    weather-appropriate essentials.
-                </p>
-            </article>
-
-            <article class="tip-card">
-                <div class="emoji">🙏</div>
-                <h3>Respect Local Culture</h3>
-                <p>
-                    Follow local customs, dress appropriately at religious
-                    places, ask before photographing people and respect
-                    cultural traditions.
-                </p>
-            </article>
-
-            <article class="tip-card">
-                <div class="emoji">💰</div>
-                <h3>Manage Your Budget</h3>
-                <p>
-                    Estimate transport, accommodation, meals, entry fees
-                    and shopping expenses. Keep some money aside for
-                    unexpected costs.
-                </p>
-            </article>
-
-            <article class="tip-card">
-                <div class="emoji">🛡️</div>
-                <h3>Stay Safe</h3>
-                <p>
-                    Keep valuables secure, use reliable transport,
-                    save emergency contacts and follow local safety
-                    advice.
-                </p>
-            </article>
-
-            <article class="tip-card">
-                <div class="emoji">🌿</div>
-                <h3>Travel Responsibly</h3>
-                <p>
-                    Avoid littering, reduce plastic waste, respect wildlife,
-                    support local businesses and help protect historic
-                    monuments.
-                </p>
-            </article>
-
-        </div>
-    </section>
-
     <!-- TRAVEL PLANNING BANNER -->
     <section class="section">
         <div class="planning">
@@ -1430,7 +1119,6 @@
             <a href="#destinations">Start Exploring India →</a>
         </div>
     </section>
-
     <!-- FOOTER -->
     <footer id="contact">
         <div class="footer-grid">
@@ -1443,7 +1131,6 @@
                     culture, history and traditions.
                 </p>
             </div>
-
             <div class="footer-column">
                 <h3>Explore</h3>
                 <a href="#regions">Regions of India</a>
@@ -1451,7 +1138,6 @@
                 <a href="#heritage">Historical Heritage</a>
                 <a href="#gallery">Image Gallery</a>
             </div>
-
             <div class="footer-column">
                 <h3>Discover Culture</h3>
                 <a href="#festivals">Cultural Festivals</a>
@@ -1459,7 +1145,6 @@
                 <a href="#tips">Travel Tips</a>
                 <a href="#contact">Travel Information</a>
             </div>
-
             <div class="footer-column">
                 <h3>Contact Information</h3>
                 <p>📧 info@exploreindia.example</p>
@@ -1467,14 +1152,11 @@
                 <p>🌐 Tourism and Heritage Guide</p>
                 <p>✉️ Visitor Information</p>
             </div>
-
         </div>
-
         <div class="copyright">
             <p>© 2026 ExploreIndia. All rights reserved.</p>
             <p>Celebrating India's history, culture and natural beauty.</p>
         </div>
     </footer>
-
 </body>
 </html>
